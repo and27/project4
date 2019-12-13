@@ -1,0 +1,66 @@
+{% extends "template.html" %}
+{% block title %}
+PLAY
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+	<div class="row pt-4">
+		<div class="col-md-4 mt-5">
+		 <div class="list-group p-2" id="list-tab" role="tablist">
+			<a href="#ch1" id="ch1-list" data-toggle="list" class="h4 list-group-item list-group-item-action list-group-item-dark active" >Mark</a>
+			<a href="#ch2" id="ch2-list" class=" h4 list-group-item list-group-item-action list-group-item-dark " data-toggle="list">One </a>
+			<a href="#ch3" id="ch3-list" class="h4 list-group-item list-group-item-action list-group-item-dark" data-toggle="list">Ferd</a>
+	
+		 </div><!-- end list group -->
+		</div><!-- end col-md-4 -->
+
+		<div class="col-md-8">
+		<div class="tab-content" id="nav-tabContent">
+
+		 <div role="tabpanel" class="tab-pane fade show active tarjeta"  id="ch1">
+			
+	<div class="row">
+	
+	<div class="col-md-6">
+	<h1> Character 1 </h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel condimentum ipsum. Maecenas viverra consectetur metus, id semper felis vehicula a. Nam sit amet augue vel quam aliquet tempus. </p>
+	</div>
+
+	<div class="col-md-6">
+	<img src="../static/mark.png" id="char">
+	</div>
+	</div>
+		 </div><!--end tab pane -->
+
+		 <div class="tab-pane fade card tarjeta" role="tabpanel" id="ch2">
+<div class="row">
+	
+	<div class="col-md-6">
+			<h1> Character 2 </h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel condimentum ipsum. Maecenas viverra consectetur metus, id semper felis vehicula a. Nam sit amet augue vel quam aliquet tempus. </p></div>
+<div class="col-md-6">
+
+	<img src="../static/puf.png" id="char">
+	</div>
+	</div>
+		 </div><!--end tab pane -->
+
+		 <div class="tab-pane fade tarjeta" role="tabpanel" id="ch3">
+	<div class="row">
+	
+	<div class="col-md-6">
+			<h1> Character 3 </h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel condimentum ipsum. Maecenas viverra consectetur metus, id semper felis vehicula a. Nam sit amet augue vel quam aliquet tempus. </p>
+</div>
+<div class="col-md-6">
+	<img src="../static/puf2.png" id="char">
+	</div>
+	</div>
+		 </div><!--end tab pane -->
+
+		</div><!--end tab content -->
+		</div><!-- end col-md-9 -->
+	</div>
+	</div>
+{% endblock %}

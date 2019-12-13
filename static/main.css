@@ -1,0 +1,44 @@
+#back {
+	background-image: url("../static/back.png");
+	background-size: cover;
+}
+
+.tarjeta {
+	background-color: #ffffffa8;
+	padding: 3vw;
+}
+
+#logo{
+	position: absolute;
+	width:5vw;
+	margin-top:-1vw;
+	margin-left:1vw;
+}
+
+#logo2 {
+	width:5vw;
+}
+
+#char{
+	width:10vw;
+	margin-top:2vw;
+
+}
+@media (max-width:700px){
+#title{
+	font-size:12vw;
+}
+
+}
+
+
+
+@media (max-width:960px){
+	#letsplay {
+	display:none;
+}
+	#charList {
+	margin-top: -4vw;
+
+}
+}

@@ -1,0 +1,34 @@
+{% extends "template.html" %}
+{% block head %}
+  
+    <link rel="stylesheet" href="../static/TemplateData/style.css">
+    <link rel="shortcut icon" href="../static/TemplateData/favicon.ico" />
+    <script src="../static/TemplateData/UnityProgress.js"></script>
+{% endblock %}
+
+{% block body %}
+  <div class="template">
+    <div class="clear">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="500px" width="820px"></canvas>
+      <br>
+      <div class="logo"></div>
+      <div class="fullscreen"><img src="../static/TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+      <div class="title">Marks</div>
+    </div>
+    <script type='text/javascript'>
+  var Module = {
+    TOTAL_MEMORY: 268435456,
+    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+    compatibilitycheck: null,
+    backgroundColor: "#FFFFFF",
+    splashStyle: "Dark",
+    dataUrl: "../static/Release/AI.data",
+    codeUrl: "../static/Release/AI.js",
+    asmUrl: "../static/Release/AI.asm.js",
+    memUrl: "../static/Release/AI.mem",
+  };
+</script>
+<script src="../static/Release/UnityLoader.js"></script>
+
+  </div>
+{% endblock %}

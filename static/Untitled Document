@@ -1,0 +1,4 @@
+#back {
+	background-image: url("../static/emoji.png");
+	background-size: cover;
+}

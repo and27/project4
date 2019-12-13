@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initialscale=1">
+	<title>{% block title %} {% endblock %}</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600i&display=swap" rel="stylesheet"> 
+
+	<!-- JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="../static/main.css">
+	 <!-- Socket IO JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+
+<!-- BOOTSTRAP JS (Last) -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+{% block head %}
+{% endblock %}
+
+<style>
+	
+	#title{
+		font-family: 'Nunito', sans-serif;}
+	.grayC{
+		color: gray;
+	}
+	#char{
+	transition: transform 1s;
+	transform:scale(1.1);	
+}	
+	#error{
+	}
+	.largeButton{
+	padding: 1.5vw 10vw;
+	}
+	.navbar{
+		padding:1rem;}
+	.marginw{
+	padding:2rem 0rem 0.5rem;}
+</style>
+
+</head>
+
+<body id="back">
+	{% if session.username %}
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="/"><img id="logo" src="../static/logo.png"></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav" style="margin-left:7vw;">
+			 <li class="nav-item"><a class="nav-link" href="/game">Play</a></li>
+	    		 <li class="nav-item"><a class="nav-link" href="/char">Characters</a></li>
+			 <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+			</ul>
+
+			 <ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="/statistics">{{session.username}}</a>
+			  </li>
+			  <li class="nav-item">
+				<a id="logout" class="nav-link" href="/logout">Logout</a>
+			  </li>
+			 </ul></div>
+	{% else %}
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+			
+			<a class="navbar-brand" href="#"><img id="logo2" src="../static/logo.png"></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a href='/login' class="nav-link h5"><b>Login</b></a></li>
+			<li class="nav-item">
+				<a href='/register' class="nav-link h5">Register</a></li>
+		</ul>
+		</div>
+	{% endif %}
+		</nav>
+
+<main class="container p-5" id="charList">
+	
+	{% block body %}
+	{% endblock %}
+
+</main>
+
+</body>
+</html>
+	
